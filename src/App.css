@@ -1,3 +1,14 @@
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-image: url('https://media.istockphoto.com/id/2162272631/photo/turquoise-ocean-sea-water-white-wave-splashing-deep-blue-sea-bird-eye-view-monster-wave.webp?a=1&b=1&s=612x612&w=0&k=20&c=8v10TBfSg89UdO9IKfsug9PJamttb-lkpG1DLAleKgc='); /* Optional background image */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -40,3 +51,63 @@
 .read-the-docs {
   color: #888;
 }
+
+/* Card Container */
+.card {
+  background: rgba(255, 255, 255, 0.1); /* White with 10% opacity */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Light white border */
+  backdrop-filter: blur(10px); /* Blur effect for transparency */
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 20px;
+  max-width: 400px; /* Limit card width */
+  margin: 50px auto; /* Center horizontally with some spacing */
+}
+
+/* Card Body */
+.card-body {
+  color: #e0e1e6; /* White text color for contrast */
+}
+
+/* Input Fields */
+.form-control-sm {
+  background: rgba(255, 255, 255, 0.2); /* Light transparent background */
+  border: none;
+  color: #fff;
+  padding: 8px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.form-control-sm::placeholder {
+  color: rgba(255, 255, 255, 0.7); /* Light placeholder text */
+}
+
+.form-control-sm:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.3); /* Slightly more visible on focus */
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* Highlight effect */
+}
+
+/* Button */
+.btn-success {
+  background-color: rgba(0, 128, 0, 0.8); /* Green with slight transparency */
+  border: none;
+  color: #fff;
+  transition: background 0.3s ease;
+}
+
+.btn-success:hover {
+  background-color: rgba(0, 128, 0, 1); /* Solid green on hover */
+  box-shadow: 0 2px 5px rgba(0, 128, 0, 0.5);
+}
+
+/* Error Message */
+p {
+  color: #ff4d4d; /* Red error text */
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+

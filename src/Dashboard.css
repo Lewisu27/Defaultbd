@@ -1,0 +1,101 @@
+/* Background and Layout Styling */
+body {
+    background-color: #f4f7fa;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Navbar Styling */
+  .navbar {
+    margin-bottom: 20px;
+  }
+  
+  /* Table Styling */
+  .table {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .table th, .table td {
+    text-align: center;
+    padding: 12px;
+    vertical-align: middle;
+  }
+  
+  .table th {
+    background-color: #2841a7;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .table td {
+    background-color: rgba(33, 128, 224, 0.508); /* Light blue with 20% opacity */
+    transition: background-color 0.3s ease; /* Smooth transition */
+  }
+  
+  .table td:hover {
+    background-color: rgba(163, 207, 251, 0.4); /* Slightly darker transparency on hover */
+  }
+  
+  /* Modal Styling */
+  .modal-content {
+    border-radius: 10px;
+  }
+  
+  .modal-header {
+    background-color: #28a745;
+    color: rgb(27, 8, 8);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  .modal-footer {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  
+  /* Button Styling */
+  .btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+  }
+  
+  .btn-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+  }
+  
+  .btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #4e555b;
+  }
+  
+  /* Create User Button */
+  .float-end {
+    margin-right: 10px;
+  }
+  
+  /* Custom Form Styling */
+  .form-control {
+    border-radius: 0.5rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  /* Add some padding around the page content */
+  .container {
+    padding: 20px;
+  }
+  
+  /* User Table Container */
+  .col-12 {
+    margin-bottom: 20px;
+  }
+  

@@ -19,9 +19,11 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import {jwtDecode} from 'jwt-decode';
 import Form from 'react-bootstrap/Form';
-
 import Dashboard from './Dashboard';
 import Login from './Login';
+import deleteUser from './assets/component/delete';
+import './App.css';
+import Profile from './Profile';
 
 function App() {
   return (
@@ -31,8 +33,11 @@ function App() {
           <Col md={12}>
             <Routes>
               <Route path="/" element={<Login />} />
-              <Route path="/login" element={<Login />} />
+              <Route path="/Login" element={<Login />} />
               <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/delete" element={<deleteUser/>} />
+              <Route path="/Profile" element={<Profile/>} />
+
             </Routes>
           </Col>
         </Row>

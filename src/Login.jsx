@@ -11,10 +11,11 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Nav from 'react-bootstrap/Nav';
+import { NavLink } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import {jwtDecode } from 'jwt-decode';
-
 import { API_ENDPOINT } from './Api';
+
 
 function Login() {
   const navigate = useNavigate();
@@ -26,11 +27,10 @@ function Login() {
     const fetchUser = async () => {
       try {
         const response = JSON.parse(localStorage.getItem('token'));
-        setUser(response);
+        setUser(response.data);
 
-       
       } catch (error) {
-        navigate('/login');
+        navigate("/login");
       }
     };
 
@@ -39,24 +39,28 @@ function Login() {
 
   /* Perform Login Method */
   const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [passwordx, setpasswordx] = useState('');
   const [error, setError] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // console.log('Submitting login:', { username, password }); 
+    // if (isSubmitting) return; // Prevent multiple submissions
+    // setIsSubmitting(true);
+    // console.log('Submitting login:', { username, passwordx }); 
 
     try {
       const response = await axios.post(`${API_ENDPOINT}/auth/login`, {
         username,
-        password,
+        passwordx,
         
       });
 
-      localStorage.setItem('token', JSON.stringify(response));
+      localStorage.setItem("token", JSON.stringify(response));
       setError('');
-      navigate('/dashboard');
+     
+      navigate("/dashboard");
+
     } catch (error) {
       setError('Invalid username or password');
     }
@@ -64,12 +68,14 @@ function Login() {
 
   return (
     <>
-      <Navbar bg="success" data-bs-theme="dark">
+      <Navbar data-bs-theme="dark">
         <Container>
-          <Navbar.Brand href="#">Naga College Foundation, Inc.</Navbar.Brand>
+          <Navbar.Brand href="#">
+            <h1>My React Website.</h1>
+
+          </Navbar.Brand>
         </Container>
       </Navbar>
-
       <Container>
         <Row className="justify-content-md-center">
           <Col md={4}>
@@ -79,17 +85,18 @@ function Login() {
                   {/* <img src={logo} width="30%" alt="Logo" /> */}
                 </div>
                 <center>
-                  <h5>A Proposed Enrollment System Using Serverless Computing</h5>
+                  <h2 className="text-light px-3 py-2 rounded hover-effect">Welcome!</h2>
                 </center>
+            
                 <div className="card">
                   <div className="card-body login-card-body">
                    
                     <form onSubmit={handleSubmit}>
                      
                       <Form.Group controlId="formUsername">
-                        <Form.Label>Username</Form.Label>
+                        <Form.Label>Enter Username</Form.Label>
                         <Form.Control
-                          type="text"
+                          type="username"
                           className="form-control-sm rounded-0"
                           placeholder="Enter Username"
                           value={username}
@@ -98,14 +105,14 @@ function Login() {
                         />
                       </Form.Group>
 
-                      <Form.Group controlId="formPassword">
-                        <Form.Label>Password</Form.Label>
+                      <Form.Group controlId="formpasswordx">
+                        <Form.Label>Enter Password</Form.Label>
                         <Form.Control
                           className="form-control-sm rounded-0"
                           type="password"
-                          placeholder="Enter Password"
-                          value={password}
-                          onChange={(e) => setPassword(e.target.value)}
+                          placeholder="Enter password"
+                          value={passwordx}
+                          onChange={(e) => setpasswordx(e.target.value)}
                           required
                         />
                       </Form.Group>
@@ -121,7 +128,10 @@ function Login() {
                         >
                           Log in&nbsp;Now
                         </Button>
+                      
+                     
                       </Form.Group>
+                      
                     </form>
                   </div>
                 </div>
